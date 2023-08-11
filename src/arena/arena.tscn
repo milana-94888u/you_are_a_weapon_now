@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d322xeupi10si"]
+[gd_scene load_steps=6 format=3 uid="uid://d322xeupi10si"]
 
 [ext_resource type="PackedScene" uid="uid://cmp6m1nc6opsf" path="res://src/player/player.tscn" id="1_01btu"]
 [ext_resource type="Script" path="res://src/arena/arena.gd" id="1_472gy"]
+[ext_resource type="PackedScene" uid="uid://gwfmayosae1r" path="res://src/enemy/enemy.tscn" id="3_ujowl"]
 
 [sub_resource type="Animation" id="Animation_yhyl1"]
 resource_name = "fight"
@@ -12,10 +13,10 @@ tracks/0/path = NodePath("Player:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [&"attack1"]
+"values": [&"idle", &"attack1"]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -31,6 +32,56 @@ tracks/1/keys = {
 "method": &"play"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Enemy:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"attack1", &"attack1"]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Enemy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"idle", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(120, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Enemy:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(480, 120), Vector2(360, 120)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ntmkd"]
 _data = {
@@ -42,7 +93,13 @@ script = ExtResource("1_472gy")
 
 [node name="Player" parent="." instance=ExtResource("1_01btu")]
 
+[node name="Enemy" parent="." instance=ExtResource("3_ujowl")]
+position = Vector2(480, 120)
+flip_h = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_ntmkd")
 }
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

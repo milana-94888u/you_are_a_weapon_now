@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://gwfmayosae1r"]
+
+[ext_resource type="Texture2D" uid="uid://n2mx7vnkpoiy" path="res://assets/sprites/Medieval Warrior Pack/Idle.png" id="1_v406m"]
+[ext_resource type="Texture2D" uid="uid://c3yeg2utmrgfn" path="res://assets/sprites/Medieval Warrior Pack/Attack1.png" id="2_1wp2b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdoc5"]
+atlas = ExtResource("2_1wp2b")
+region = Rect2(0, 0, 184, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhdsx"]
+atlas = ExtResource("2_1wp2b")
+region = Rect2(184, 0, 184, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hfm7"]
+atlas = ExtResource("2_1wp2b")
+region = Rect2(368, 0, 184, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5rcd"]
+atlas = ExtResource("2_1wp2b")
+region = Rect2(552, 0, 184, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h2ce"]
+atlas = ExtResource("1_v406m")
+region = Rect2(0, 0, 184, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek0u1"]
+atlas = ExtResource("1_v406m")
+region = Rect2(184, 0, 184, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbfd6"]
+atlas = ExtResource("1_v406m")
+region = Rect2(368, 0, 184, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7h67"]
+atlas = ExtResource("1_v406m")
+region = Rect2(552, 0, 184, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h525a"]
+atlas = ExtResource("1_v406m")
+region = Rect2(736, 0, 184, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vg0vy"]
+atlas = ExtResource("1_v406m")
+region = Rect2(920, 0, 184, 137)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oklx5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdoc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhdsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hfm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5rcd")
+}],
+"loop": true,
+"name": &"attack1",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h2ce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek0u1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbfd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7h67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h525a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vg0vy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[node name="Enemy" type="AnimatedSprite2D"]
+scale = Vector2(2.4, 2.4)
+sprite_frames = SubResource("SpriteFrames_oklx5")
+animation = &"attack1"
+centered = false
