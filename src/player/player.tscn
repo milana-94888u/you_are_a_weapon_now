@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://cmp6m1nc6opsf"]
+
+[ext_resource type="Texture2D" uid="uid://gpjvd0f6b8lh" path="res://assets/sprites/Medieval Warrior Pack 2/Idle.png" id="1_wqx37"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw8ck"]
+atlas = ExtResource("1_wqx37")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d35yw"]
+atlas = ExtResource("1_wqx37")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n3pa"]
+atlas = ExtResource("1_wqx37")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ibhd"]
+atlas = ExtResource("1_wqx37")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0cdd"]
+atlas = ExtResource("1_wqx37")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c88vi"]
+atlas = ExtResource("1_wqx37")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu1j4"]
+atlas = ExtResource("1_wqx37")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tm5us"]
+atlas = ExtResource("1_wqx37")
+region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6diig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw8ck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d35yw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n3pa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ibhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0cdd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c88vi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu1j4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tm5us")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Player" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_6diig")
+frame_progress = 0.203927
