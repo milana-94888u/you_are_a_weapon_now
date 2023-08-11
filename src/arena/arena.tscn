@@ -92,6 +92,8 @@ _data = {
 script = ExtResource("1_472gy")
 
 [node name="Player" parent="." instance=ExtResource("1_01btu")]
+position = Vector2(120, 0)
+animation = &"attack3"
 
 [node name="Enemy" parent="." instance=ExtResource("3_ujowl")]
 position = Vector2(480, 120)
