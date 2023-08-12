@@ -2,9 +2,12 @@ extends Node2D
 
 
 func _ready() -> void:
-	$AnimationPlayer.play("fight")
+	$AnimationPlayer.play("clash_swords")
 
 
 # Animation loop
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	$AnimationPlayer.play(anim_name)
+	if anim_name == "clash_swords":
+		$AnimationPlayer.play("clash_swords_enemy_win")
+	elif anim_name == "clash_swords_enemy_win":
+		$AnimationPlayer.play("clash_swords")
