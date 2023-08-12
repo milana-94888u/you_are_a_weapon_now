@@ -4,98 +4,6 @@
 [ext_resource type="Script" path="res://src/arena/arena.gd" id="1_472gy"]
 [ext_resource type="PackedScene" uid="uid://gwfmayosae1r" path="res://src/enemy/enemy.tscn" id="3_ujowl"]
 
-[sub_resource type="Animation" id="Animation_yhyl1"]
-resource_name = "fight"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Player:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [&"idle", &"run", &"attack1"]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Player")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.2, 1.2001),
-"transitions": PackedFloat32Array(1, 1, 1),
-"values": [{
-"args": [&"idle", 1.0, false],
-"method": &"play"
-}, {
-"args": [],
-"method": &"stop"
-}, {
-"args": [2, 0.0],
-"method": &"set_frame_and_progress"
-}]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Enemy:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [&"idle", &"run", &"attack1"]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Enemy")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.2, 1.2001),
-"transitions": PackedFloat32Array(1, 1, 1),
-"values": [{
-"args": [&"idle", 1.0, false],
-"method": &"play"
-}, {
-"args": [],
-"method": &"stop"
-}, {
-"args": [2, 0.0],
-"method": &"set_frame_and_progress"
-}]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Enemy:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.4, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(504, 0), Vector2(504, 0), Vector2(404, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Player:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.4, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(48, 120), Vector2(48, 120), Vector2(148, 120)]
-}
-
 [sub_resource type="Animation" id="Animation_q02qm"]
 resource_name = "clash_swords"
 length = 2.0
@@ -200,92 +108,6 @@ tracks/6/keys = {
 "values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.2, 1.2)]
 }
 
-[sub_resource type="Animation" id="Animation_2ti6p"]
-resource_name = "clash_swords_player_win"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Player:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"jump", &"run"]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Player")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [&"jump", 1.0, false],
-"method": &"play"
-}, {
-"args": [&"run"],
-"method": &"play_backwards"
-}]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Enemy:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"hit", &"run"]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Enemy")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [&"hit", 1.0, false],
-"method": &"play"
-}, {
-"args": [&"run"],
-"method": &"play_backwards"
-}]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Enemy:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(404, 0), Vector2(504, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Player:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(148, 120), Vector2(48, 120)]
-}
-
 [sub_resource type="Animation" id="Animation_2n1xu"]
 resource_name = "clash_swords_enemy_win"
 length = 0.8
@@ -371,6 +193,208 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(148, 120), Vector2(48, 120)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera2D:zoom")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.2, 1.2), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2ti6p"]
+resource_name = "clash_swords_player_win"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"jump", &"run"]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"jump", 1.0, false],
+"method": &"play"
+}, {
+"args": [&"run"],
+"method": &"play_backwards"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Enemy:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"hit", &"run"]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Enemy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"hit", 1.0, false],
+"method": &"play"
+}, {
+"args": [&"run"],
+"method": &"play_backwards"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Enemy:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(404, 0), Vector2(504, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(148, 120), Vector2(48, 120)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera2D:zoom")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.2, 1.2), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yhyl1"]
+resource_name = "fight"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"idle", &"run", &"attack1"]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.2001),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [&"idle", 1.0, false],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}, {
+"args": [2, 0.0],
+"method": &"set_frame_and_progress"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Enemy:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"idle", &"run", &"attack1"]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Enemy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.2001),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [&"idle", 1.0, false],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}, {
+"args": [2, 0.0],
+"method": &"set_frame_and_progress"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Enemy:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(504, 0), Vector2(504, 0), Vector2(404, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(48, 120), Vector2(48, 120), Vector2(148, 120)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ntmkd"]
 _data = {
@@ -385,20 +409,19 @@ script = ExtResource("1_472gy")
 
 [node name="Enemy" parent="." instance=ExtResource("3_ujowl")]
 position = Vector2(404, 0)
-animation = &"jump"
+animation = &"hit"
 flip_h = true
 
 [node name="Player" parent="." instance=ExtResource("1_01btu")]
 position = Vector2(148, 120)
-animation = &"hit"
+animation = &"jump"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_ntmkd")
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 324)
-zoom = Vector2(1.2, 1.2)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
