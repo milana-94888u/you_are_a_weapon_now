@@ -8,6 +8,6 @@ func _ready() -> void:
 # Animation loop
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "clash_swords":
-		$AnimationPlayer.play("clash_swords_enemy_win")
-	elif anim_name == "clash_swords_enemy_win":
+		$AnimationPlayer.play("clash_swords_player_win")
+	elif anim_name == "clash_swords_player_win":
 		$AnimationPlayer.play("clash_swords")
