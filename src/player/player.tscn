@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmp6m1nc6opsf"]
+[gd_scene load_steps=3 format=3 uid="uid://cmp6m1nc6opsf"]
 
 [ext_resource type="SpriteFrames" uid="uid://dpcvjthuc2pr4" path="res://src/player/player_frames.tres" id="1_5grn6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljmf5"]
+bg_color = Color(1, 0, 0, 1)
 
 [node name="Player" type="AnimatedSprite2D"]
 texture_filter = 1
@@ -9,3 +12,16 @@ sprite_frames = ExtResource("1_5grn6")
 animation = &"idle"
 speed_scale = 2.0
 centered = false
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = 50.0
+offset_top = 128.0
+offset_right = 122.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/fill = SubResource("StyleBoxFlat_ljmf5")
+max_value = 4.0
+step = 1.0
+value = 4.0
+show_percentage = false

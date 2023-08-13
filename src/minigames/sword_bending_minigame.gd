@@ -13,6 +13,7 @@ signal game_end(result: GameResult)
 
 
 func _process(delta: float) -> void:
+	$TextureProgressBar.value = $Timer.time_left
 	if rotation_clockwise:
 		sword_rotation += delta
 	else:

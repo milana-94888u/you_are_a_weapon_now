@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://gwfmayosae1r"]
+[gd_scene load_steps=3 format=3 uid="uid://gwfmayosae1r"]
 
 [ext_resource type="SpriteFrames" uid="uid://bsiqsvx3x7lg" path="res://src/enemy/enemy_frames.tres" id="1_7gqyj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_810ba"]
+bg_color = Color(1, 0, 0, 1)
 
 [node name="Enemy" type="AnimatedSprite2D"]
 texture_filter = 1
@@ -9,3 +12,16 @@ sprite_frames = ExtResource("1_7gqyj")
 animation = &"attack2"
 speed_scale = 2.0
 centered = false
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = 56.0
+offset_top = 99.0
+offset_right = 96.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/fill = SubResource("StyleBoxFlat_810ba")
+max_value = 4.0
+step = 1.0
+value = 4.0
+show_percentage = false

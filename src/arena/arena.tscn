@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://d322xeupi10si"]
+[gd_scene load_steps=12 format=3 uid="uid://d322xeupi10si"]
 
 [ext_resource type="PackedScene" uid="uid://cmp6m1nc6opsf" path="res://src/player/player.tscn" id="1_01btu"]
 [ext_resource type="Script" path="res://src/arena/arena.gd" id="1_472gy"]
 [ext_resource type="Texture2D" uid="uid://1gw0pmyqnt6r" path="res://assets/sprites/bg/Background.png" id="2_s6ask"]
 [ext_resource type="PackedScene" uid="uid://gwfmayosae1r" path="res://src/enemy/enemy.tscn" id="3_ujowl"]
+[ext_resource type="PackedScene" uid="uid://c5aifa0ba50dp" path="res://src/captions/captions.tscn" id="5_nfqad"]
 
 [sub_resource type="Animation" id="Animation_q02qm"]
 resource_name = "clash_swords"
@@ -524,5 +525,7 @@ libraries = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Captions" parent="CanvasLayer" instance=ExtResource("5_nfqad")]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
