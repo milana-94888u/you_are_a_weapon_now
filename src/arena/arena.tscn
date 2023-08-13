@@ -6,7 +6,7 @@
 
 [sub_resource type="Animation" id="Animation_q02qm"]
 resource_name = "clash_swords"
-length = 2.0
+length = 1.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -408,13 +408,11 @@ _data = {
 script = ExtResource("1_472gy")
 
 [node name="Enemy" parent="." instance=ExtResource("3_ujowl")]
-position = Vector2(404, 0)
-animation = &"hit"
+position = Vector2(504, 0)
 flip_h = true
 
 [node name="Player" parent="." instance=ExtResource("1_01btu")]
-position = Vector2(148, 120)
-animation = &"jump"
+position = Vector2(48, 120)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)

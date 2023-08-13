@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6s6tc3k4sstn"]
+
+[ext_resource type="Script" path="res://src/minigames/sword_bending_minigame.gd" id="1_8hcvr"]
+[ext_resource type="Texture2D" uid="uid://ba8dhgdibqrl5" path="res://assets/sprites/weapons/Sword01.png" id="2_jgr5m"]
+[ext_resource type="Shader" path="res://src/minigames/elastic_sword.gdshader" id="2_vnjm6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v1425"]
+shader = ExtResource("2_vnjm6")
+shader_parameter/rotation = 10.0
+shader_parameter/rotation_offset = Vector2(0.5, 0.5)
+
+[node name="SwordBendingMinigame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8hcvr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_v1425")
+layout_mode = 0
+offset_right = 648.0
+offset_bottom = 648.0
+texture = ExtResource("2_jgr5m")

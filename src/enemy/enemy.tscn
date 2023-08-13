@@ -6,6 +6,6 @@
 texture_filter = 1
 scale = Vector2(4.32, 4.32)
 sprite_frames = ExtResource("1_7gqyj")
-animation = &"idle"
+animation = &"attack2"
 speed_scale = 2.0
 centered = false
